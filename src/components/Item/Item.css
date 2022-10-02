@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@500&family=Merriweather&family=Oswald:wght@300&family=PT+Serif&family=Poppins:wght@400;500;600;700&family=Roboto&family=Signika+Negative:wght@600&display=swap');
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    margin: 5px;
+    font-family: 'Commissioner', sans-serif;
+}
+
+.card img {
+    height: 350px;
+}
+
+.card-title {
+    height: 80px;
+    font-size: 30px;
+}
+
+.card-price {
+    font-size: 25px;
+}
+
