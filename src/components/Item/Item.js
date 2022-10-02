@@ -10,7 +10,7 @@ const Item = ({ img, name, price }) => {
                 <Card.Body>
                     <h3 className="card-title">{name}</h3>
                     <p className="card-price">${price}</p>
-                    <Button variant="light">Añadir al carrito</Button>
+                    <Button>Añadir al carrito</Button>
                 </Card.Body>
             </Card>
     )

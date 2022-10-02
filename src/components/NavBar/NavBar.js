@@ -1,20 +1,20 @@
 import { Navbar, Nav, Container } from "react-bootstrap";
+import NavbarCollapse from "react-bootstrap/esm/NavbarCollapse.js";
+import NavbarToggle from "react-bootstrap/esm/NavbarToggle.js";
 import CartWidget from '../CartWidget/CartWidget.js';
 import './NavBar.css';
 
 const NavBar = () => {
   return (
     <>
-    <Navbar expand="lg" style={{backgroundColor: "#090953"}}>
+    <Navbar expand="lg">
       <Container>
-        <Navbar.Brand href="#" className="logo">Fútbol Retro</Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Nav>
-        <Nav.Link href="camisetas" className="seccionesNav">Camisetas</Nav.Link>
-        <Nav.Link href="shorts" className="seccionesNav">Shorts</Nav.Link>
-        <Nav.Link href="buzos" className="seccionesNav">Buzos</Nav.Link>
-        <Nav.Link href="botines" className="seccionesNav">Botines</Nav.Link>
-        </Nav>
+        <h1 href="#" className="logo">Fútbol Retro</h1>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
+        <h5 href="camisetas" className="seccionesNav">Camisetas</h5>
+        <h5 href="shorts" className="seccionesNav">Shorts</h5>
+        <h5 href="buzos" className="seccionesNav">Buzos</h5>
+        <h5 href="botines" className="seccionesNav">Botines</h5>
         <CartWidget/>
       </Container>
     </Navbar>
