@@ -5,12 +5,12 @@ import "./Item.css"
 
 const Item = ({ img, name, price }) => {
     return (
-            <Card className="card">
+            <Card>
                 <Image fluid src={img} alt={name}/>
                 <Card.Body>
                     <h3 className="card-title">{name}</h3>
                     <p className="card-price">${price}</p>
-                    <Button variant="success">Añadir al carrito</Button>
+                    <Button variant="light">Añadir al carrito</Button>
                 </Card.Body>
             </Card>
     )

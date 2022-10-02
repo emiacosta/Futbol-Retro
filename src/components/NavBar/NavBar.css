@@ -1,3 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@500&family=Merriweather&family=Oswald:wght@300&family=PT+Serif&family=Poppins:wght@400;500;600;700&family=Roboto&family=Signika+Negative:wght@600&display=swap');
+
 .logo {
-    font-size: 40px;
+    color: #fff;
+    font-size: 30px;
+    font-family: 'Commissioner', sans-serif;
+}
+
+.seccionesNav {
+   color: #fff;
+   font-size: 20px;
+   font-family: 'Commissioner', sans-serif;
+   margin: 10px;
+}
+
+.seccionesNav:hover{
+    color: #fff;
+    border-color: #fff;
+    box-sizing: border-box;
 }

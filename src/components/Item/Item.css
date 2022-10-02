@@ -1,25 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@500&family=Merriweather&family=Oswald:wght@300&family=PT+Serif&family=Poppins:wght@400;500;600;700&family=Roboto&family=Signika+Negative:wght@600&display=swap');
 
-.card {
+div .card {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 350px;
-    margin: 5px;
+    margin: 10px;
+    box-sizing: border-box;
+    border-style: solid;
+    border-color: #090953;
+    background-color: rgb(9, 9, 84);
     font-family: 'Commissioner', sans-serif;
 }
 
 .card img {
     height: 350px;
+    width: 100%;
+    border-style: solid;
+    border-color: rgb(9, 9, 84);
 }
 
 .card-title {
     height: 80px;
     font-size: 30px;
+    color: #fff;
 }
 
 .card-price {
+    color: #fff;
     font-size: 25px;
 }
-
