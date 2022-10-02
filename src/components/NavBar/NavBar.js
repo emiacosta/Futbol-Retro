@@ -7,7 +7,7 @@ const NavBar = () => {
     <>
     <Navbar expand="lg" variant="dark" bg="dark">
       <Container>
-        <Navbar.Brand href="#">Fútbol Retro Shop</Navbar.Brand>
+        <Navbar.Brand href="#">Fútbol Retro</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Nav>
         <Nav.Link href="camisetas">Camisetas</Nav.Link>
