@@ -1,6 +1,4 @@
-import { Navbar, Nav, Container } from "react-bootstrap";
-import NavbarCollapse from "react-bootstrap/esm/NavbarCollapse.js";
-import NavbarToggle from "react-bootstrap/esm/NavbarToggle.js";
+import { Navbar, Container } from "react-bootstrap";
 import CartWidget from '../CartWidget/CartWidget.js';
 import './NavBar.css';
 

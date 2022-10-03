@@ -2,6 +2,7 @@ import ItemList from "../ItemList/ItemList"
 import { getProducts } from "../ItemList/ItemList"
 import { useState , useEffect } from "react"
 import "./ItemListContainer.css"
+import { Spinner } from '@chakra-ui/react'
 
 const ItemListContainer = ({ Greeting }) => {
 
@@ -17,7 +18,10 @@ const ItemListContainer = ({ Greeting }) => {
     }, [])
 
     if(loading) {
-        return <h1 className="loading">Loading...</h1>
+        return (<div className="loading">
+            <Spinner thickness='3px' speed='0.5s' emptyColor='gray.200' color='#065666'size='xl'/>
+            <h2>Obteniendo datos...</h2>
+            </div>)
     }
 
     return (
