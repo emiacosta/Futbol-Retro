@@ -1,6 +1,6 @@
 import { Navbar, Container } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
 import CartWidget from '../CartWidget/CartWidget.js';
-import SeccionesNavBar from "../SeccionesNavBar/SeccionesNavBar.js";
 import './NavBar.css';
 
 const NavBar = () => {
@@ -8,9 +8,16 @@ const NavBar = () => {
     <>
       <Navbar expand="lg">
         <Container>
-          <h1 href="#" className="logo">Fútbol Retro</h1>
-          <SeccionesNavBar/>
-          <CartWidget />
+        <NavLink to='/' className={"logo"}>
+          <h1>Fútbol Retro</h1>
+      </NavLink>
+        <div className="Categories">
+            <NavLink to={'/category/camisetas'} className={({ isActive}) => isActive ? 'ActiveOption' : 'Option'}>Camisetas</NavLink>
+            <NavLink to={'/category/shorts'} className={({ isActive}) => isActive ? 'ActiveOption' : 'Option'}>Shorts</NavLink>
+            <NavLink to={'/category/buzos'} className={({ isActive}) => isActive ? 'ActiveOption' : 'Option'}>Buzos</NavLink>
+            <NavLink to={'/category/botines'} className={({ isActive}) => isActive ? 'ActiveOption' : 'Option'}>Botines</NavLink>
+        </div>
+        <CartWidget />
         </Container>
       </Navbar>
     </>

@@ -1,21 +1,27 @@
 import ItemList from "../ItemList/ItemList"
-import { getProducts } from "../ItemList/ItemList"
+import { getProducts, getProductsByCategory } from "../../asyncMock"
 import { useState , useEffect } from "react"
 import "./ItemListContainer.css"
 import { Spinner } from '@chakra-ui/react'
+import { useParams } from 'react-router-dom'
 
 const ItemListContainer = ({ Greeting }) => {
 
     const [products, setProducts] = useState([])
     const [loading, setLoading] = useState(true)
+    const { categoryId } = useParams()
 
     useEffect(() => {
-        getProducts().then(response => {
+        setLoading(true)
+
+        const asyncFunction = categoryId ? getProductsByCategory : getProducts
+       
+        asyncFunction(categoryId).then(response => {
             setProducts(response)
         }).finally(() => {
             setLoading(false)
         })
-    }, [])
+    }, [categoryId])
 
     if(loading) {
         return (<div className="loading">

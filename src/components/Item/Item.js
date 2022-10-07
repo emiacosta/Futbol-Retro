@@ -1,18 +1,16 @@
 import Card from 'react-bootstrap/Card';
 import Image from 'react-bootstrap/Image'
-import { Button } from '@chakra-ui/react'
 import "./Item.css"
+import { Link } from 'react-router-dom'
 
-const Item = ({ img, name, price }) => {
+const Item = ({ id, img, name, price, }) => {
     return (
         <Card>
             <Image fluid src={img} alt={name} />
             <Card.Body>
                 <h3 className="card-title">{name}</h3>
                 <p className="card-price">${price}</p>
-                    <Button direction='row' pacing={4} colorScheme='teal' variant='solid' align='center'>
-                        Ver detalles
-                    </Button>
+                <Link to={`/detail/${id}`} className="buttonCard">Ver detalle</Link>
             </Card.Body>
         </Card>
     )
