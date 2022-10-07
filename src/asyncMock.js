@@ -1,5 +1,5 @@
 const products = [
-    {   id: '1',
+    {   id: 1,
         name: "Camiseta Argentina '86",
         price: 1000,
         category: 'camisetas',
@@ -7,7 +7,7 @@ const products = [
         stock: 25,
         description: "Camiseta de la Selección Argentina del año '86"
     },
-    {   id: '2',
+    {   id: 2,
         name: "Camiseta Italia '86",
         price: 1000,
         category: 'camisetas',
@@ -15,7 +15,7 @@ const products = [
         stock: 16,
         description: "Camiseta de la Selección Italiana del año '86"
     },
-    {   id: '3',
+    {   id: 3,
         name: "Camiseta Alemania '90",
         price: 1000,
         category: 'camisetas',
@@ -23,7 +23,7 @@ const products = [
         stock: 10,
         description: "Camiseta Alemania '90"
     },
-    {   id: '4',
+    {   id: 4,
         name: "Camiseta Francia '90",
         price: 1000,
         category: 'camisetas',
@@ -31,7 +31,7 @@ const products = [
         stock: 10,
         description: "Camiseta Francia '90"
     },
-    {   id: '5',
+    {   id: 5,
         name: "Camiseta Brasil 2002",
         price: 1000,
         category: 'camisetas',
@@ -39,7 +39,7 @@ const products = [
         stock: 10,
         description: "Camiseta Brasil 2002"
     },
-    {   id: '6',
+    {   id: 6,
         name: "Camiseta España 2010",
         price: 1000,
         category: 'camisetas',
@@ -47,7 +47,7 @@ const products = [
         stock: 10,
         description: "Camiseta España 2010"
     },
-    {   id: '7',
+    {   id: 7,
         name: "Camiseta Portugal '60",
         price: 1000,
         category: 'camisetas',
@@ -55,7 +55,7 @@ const products = [
         stock: 10,
         description: "Camiseta Portugal '60"
     },
-    {   id: '8',
+    {   id: 8,
         name: "Camiseta Inglaterra '90",
         price: 1000,
         category: 'camisetas',

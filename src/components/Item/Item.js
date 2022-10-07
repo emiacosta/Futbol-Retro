@@ -13,7 +13,9 @@ const Item = ({ id, img, name, price, }) => {
                 <Link to={`/detail/${id}`} className="buttonCard">Ver detalle</Link>
             </Card.Body>
         </Card>
+        
     )
 }
+console.log(Item)
 
 export default Item
