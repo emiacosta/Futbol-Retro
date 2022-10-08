@@ -20,14 +20,14 @@ const ItemDetailContainer = () => {
         })
     }, [productId])
 
-    if(loading) {
+    if (loading) {
         return (<div className="loading">
-            <Spinner thickness='3px' speed='0.5s' emptyColor='gray.200' color='#065666'size='xl'/>
+            <Spinner thickness='3px' speed='0.5s' emptyColor='gray.200' color='#065666' size='xl' />
             <h2>Obteniendo datos...</h2>
-            </div>)
+        </div>)
     }
 
-    return(
+    return (
         <div className='ItemDetailContainer' >
             <ItemDetail  {...product} />
         </div>

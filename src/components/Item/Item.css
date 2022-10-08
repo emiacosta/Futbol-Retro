@@ -12,23 +12,26 @@ div .card {
     border-color: #065666;
     background-color: #065666;
     font-family: 'Commissioner', sans-serif;
+    padding: 20px;
 }
 
-.card img {
-    height: 350px;
-    width: 100%;
-    border: solid 6px #065666;
+.card-img {
+    height: 300px;
+    width: 250px;
 }
 
 .card-title {
-    height: 50px;
+    height: 30px;
     font-size: 25px;
     color: #fff;
+    display: flex;
+    align-items: center;
 }
 
 .card-price {
     color: #fff;
     font-size: 25px;
+    margin: 20px;
 }
 
 .buttonCard {
@@ -42,5 +45,5 @@ div .card {
 }
 
 .buttonCard:hover {
-    color: #fff;
+    color: black;
 }

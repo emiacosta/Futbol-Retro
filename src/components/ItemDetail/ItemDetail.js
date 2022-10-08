@@ -1,9 +1,7 @@
-import './ItemDetail.css'
 import ItemCount from '../ItemCount/ItemCount'
-import Card from 'react-bootstrap/Card';
-import Image from 'react-bootstrap/Image'
+import './ItemDetail.css'
 
-const ItemDetail = ({ id, name, img, price, stock }) => {
+const ItemDetail = ({ id, name, img, category, description, price, stock }) => {
     const handleOnAdd = (quantity) => {
         const productToAdd = {
             id, name, price, quantity
@@ -12,16 +10,23 @@ const ItemDetail = ({ id, name, img, price, stock }) => {
     }
 
     return (
-        <Card>
-            <Image fluid src={img} alt={name} />
-            <Card.Body>
-                <h3 className="card-title">{name}</h3>
-                <p className="card-price">${price}</p>
-                <footer className='ItemFooter'>
+        <div className="card">
+            <header>
+                <h2 className="card-title">
+                    {name}
+                </h2>
+            </header>
+            <img className='card-img' src={img} alt={name} />
+            <section>
+                <h5 className='card-description'>{description}</h5>
+                <p className="card-price">
+                    Precio: ${price}
+                </p>
+            </section>
+            <footer>
                 <ItemCount onAdd={handleOnAdd} stock={stock} />
             </footer>
-            </Card.Body>
-        </Card>
+        </div>
     )
 }
 

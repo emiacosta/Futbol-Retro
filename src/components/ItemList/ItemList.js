@@ -1,13 +1,11 @@
-import Item from "../Item/Item"
-import "./ItemList.css"
+import './ItemList.css'
+import Item from '../Item/Item'
 
-
-const ItemList = ({ products }) => {
-    return (
-        <div className="listaItems">
-            {products.map(prod =>
-                <Item key={prod.id} img={prod.img} name={prod.name} price={prod.price} />)}
-        </div>
+const ItemList = ({products, setPage }) => {
+    return(
+        <div className='listaItems' onClick={() => console.log('hice click en itemlist')}>
+            {products.map(prod => <Item key={prod.id} {...prod} setPage={setPage}/>)}
+        </div>    
     )
 }
 

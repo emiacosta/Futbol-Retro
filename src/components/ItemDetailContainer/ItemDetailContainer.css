@@ -4,4 +4,21 @@
     align-items: center;
     flex-direction: column;
     min-height: 80vh;
+    background-color: lightblue;
+}
+
+.ItemDetailContainer div {
+    width: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.ItemDetailContainer img {
+    width: 300px;
+}
+
+.ItemDetailContainer h5 {
+    width: 500px;
 }

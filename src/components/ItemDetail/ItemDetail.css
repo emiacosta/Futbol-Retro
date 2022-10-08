@@ -1,55 +1,32 @@
-.CardItem {
-    width: 500px;
+.card {
     padding: 30px;
     margin: 30px;
-    font-size: 10px;
-    background-color: papayawhip;
-    border: 1px solid #e1e1e1;
-    border-radius: 10px;
-}
-
-.ContainerItem {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 10px;
-    border-radius: 25px;
-}
-
-.ItemHeader {
-    display: flex;
-    justify-content: center;
-}
-
-.Info {
     font-size: 12px;
-    display: flex;
-    justify-content: space-around;
+    border: 1px solid #e1e1e1;
+    border-radius: 15px;
 }
 
 .Button {
     width: auto;
     padding: 12px;
-    font-size: 8px;
-    background: #8C30F5;
+    font-size: 20px;
     border-radius: 8px;
-    flex: none;
     display: flex;
     order: 1;
     align-self: center;
-    flex-grow: 0;
     justify-content: center;
     align-items: center;
-    text-decoration: none;
-    color: #FFFFFF;
-    border: none;
-    border-style: none;
     cursor: pointer;
-    outline: inherit;
 }
 
-.ItemImg {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    object-position: center;
+.card-description {
+    font-size: 25px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    margin: 20px;
+}
+
+.card-title {
+    padding-bottom: 10px;
 }
