@@ -62,6 +62,30 @@ const products =  [
         img: 'https://www.vintagefootballclub.com/wp-content/uploads/2018/06/england-1990-away-1.jpg',
         stock: 10,
         description: "Camiseta de la Selección Inglesa utilizada para el Mundial del año '90"
+    },
+    {   id: '9',
+        name: "Short Argentina '86",
+        price: 800,
+        category: 'shorts',
+        img: 'https://http2.mlstatic.com/D_NQ_NP_837565-MLA51601563044_092022-W.jpg',
+        stock: 15,
+        description: "Short de la Selección Argentina utilizado para el Mundial del año '86"
+    },
+    {   id: '10',
+        name: "Buzo de arquero Argentina '90",
+        price: 1200,
+        category: 'buzos',
+        img: 'https://http2.mlstatic.com/D_NQ_NP_923045-MLA48194155550_112021-O.jpg',
+        stock: 10,
+        description: "Buzo de arquero de la Selección Argentina utilizado para el Mundial del año '90"
+    },
+    {   id: '11',
+        name: "Botines Morelia",
+        price: 1500,
+        category: 'botines',
+        img: 'https://http2.mlstatic.com/D_685235-MLA51654324125_092022-O.jpg',
+        stock: 15,
+        description: "Botines usados por muchos jugadores en el mundial 2002"
     }
 ]
 

@@ -1,9 +1,9 @@
 .ItemListContainer {
     font-size: 40px;
-    margin-top: 20px;
     display: flex;
     flex-direction: column;
     color: #065666;
+    background-color: lightblue;
 }
 
 .loading {

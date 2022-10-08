@@ -38,7 +38,7 @@ const ItemListContainer = ({ greeting  }) => {
     // }
 
     return (
-        <div onClick={() => console.log('click en itemlistcontainer')}>
+        <div className="ItemListContainer" onClick={() => console.log('click en itemlistcontainer')}>
             {/* <button onClick={(e) => console.log(e)}>boton</button> */}
             <ItemList products={products} />
         </div>
