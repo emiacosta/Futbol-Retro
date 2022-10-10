@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@500&family=Merriweather&family=Montserrat:wght@200;300&family=Oswald:wght@300&family=PT+Serif&family=Poppins:wght@400;500;600;700&family=Roboto&family=Signika+Negative:wght@600&display=swap');
+
 .card {
     padding: 30px;
     margin: 30px;
@@ -25,6 +27,7 @@
     display: flex;
     align-items: center;
     margin: 20px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .card-title {

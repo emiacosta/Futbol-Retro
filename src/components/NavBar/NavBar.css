@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@500&family=Merriweather&family=Oswald:wght@300&family=PT+Serif&family=Poppins:wght@400;500;600;700&family=Roboto&family=Signika+Negative:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@500&family=Merriweather&family=Montserrat:wght@200;300&family=Oswald:wght@300&family=PT+Serif&family=Poppins:wght@400;500;600;700&family=Roboto&family=Signika+Negative:wght@600&display=swap');
 
 nav {
     background-color: #065666;
@@ -8,18 +8,18 @@ nav {
     margin: 10px;
     color: #fff;
     font-size: 40px;
-    font-family: 'Commissioner', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .logo:hover {
-    color: #fff;
+    color: lightblue;
 }
 
 .Option {
     text-decoration: none;
     color: #fff;
     font-size: 20px;
-    font-family: 'Commissioner', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     box-sizing: border-box;
     border: solid 2px #fff;
     border-radius: 5px;
@@ -28,14 +28,15 @@ nav {
 }
 
 .Option:hover {
-    color: black;
+    color: lightblue;
+    border-color: lightblue;
 }
 
 .ActiveOption {
     text-decoration: none;
     color: lightblue;
     font-size: 20px;
-    font-family: 'Commissioner', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     box-sizing: border-box;
     border: solid 2px black;
     border-radius: 5px;
@@ -44,5 +45,5 @@ nav {
 }
 
 .ActiveOption:hover {
-    color: #fff;
+    color: lightblue;
 }

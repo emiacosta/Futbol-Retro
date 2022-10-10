@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@500&family=Merriweather&family=Oswald:wght@300&family=PT+Serif&family=Poppins:wght@400;500;600;700&family=Roboto&family=Signika+Negative:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@500&family=Merriweather&family=Montserrat:wght@200;300&family=Oswald:wght@300&family=PT+Serif&family=Poppins:wght@400;500;600;700&family=Roboto&family=Signika+Negative:wght@600&display=swap');
 
 div .card {
     display: flex;
@@ -11,13 +11,12 @@ div .card {
     border-style: solid;
     border-color: #065666;
     background-color: #065666;
-    font-family: 'Commissioner', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     padding: 20px;
 }
 
 .card-img {
-    height: 300px;
-    width: 250px;
+    height: 250px;
 }
 
 .card-title {
@@ -45,5 +44,5 @@ div .card {
 }
 
 .buttonCard:hover {
-    color: black;
+    color: lightblue;
 }
