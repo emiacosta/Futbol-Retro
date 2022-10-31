@@ -1,10 +1,20 @@
-import "./CartWidget.css"
-import { FaShoppingCart } from "react-icons/fa";
+import cart from './assets/cart.svg'
+import './CartWidget.css'
+import { useContext } from 'react';
+import { CartContext } from '../../context/CartContext';
+import { useNavigate } from 'react-router-dom'
 
 const CartWidget = () => {
+    const { totalQuantity } = useContext(CartContext)
+
+    const navigate = useNavigate()
+
     return (
-        <FaShoppingCart className="carrito">Carrito</FaShoppingCart>
-    )
+        <button to='/cart' className="CartWidget" onClick={() => navigate('/cart')}>
+            <img src={cart} alt='cart-widget' className='CartImg'/>
+            {totalQuantity}
+        </button>
+    );
 }
 
 export default CartWidget
