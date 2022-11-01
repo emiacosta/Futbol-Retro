@@ -14,8 +14,6 @@
     font-size: 20px;
     border-radius: 8px;
     display: flex;
-    order: 1;
-    align-self: center;
     justify-content: center;
     align-items: center;
     cursor: pointer;
@@ -32,4 +30,22 @@
 
 .card-title {
     padding-bottom: 10px;
+}
+
+.sinStock{
+    font-size: 25px;
+    color: lightblue;
+    margin-top: 50px;
+}
+
+.finalizarCompra{
+    padding: 10px;
+    background-color: green;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 8px;
+}
+
+.finalizarCompra:hover{
+    color: black;
 }

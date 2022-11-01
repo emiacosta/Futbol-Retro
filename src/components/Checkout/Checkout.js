@@ -4,14 +4,16 @@ import { CartContext } from "../../context/CartContext"
 import { NotificationContext} from '../../notification/NotificationService'
 import { collection, getDocs, query, where, documentId, writeBatch, addDoc } from 'firebase/firestore'
 import { db } from '../../services/firebase/index'
-
 import { useNavigate } from "react-router-dom"
+import "./checkout.css"
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content'
 
 const Checkout = () => {
     const [loading, setLoading] = useState(false)
-
     const { cart, total, clearCart } = useContext(CartContext)
     const { setNotification } = useContext(NotificationContext)
+    const MySwal = withReactContent(Swal)
 
     const navigate = useNavigate()
 
@@ -21,30 +23,23 @@ const Checkout = () => {
         try {
             const objOrder = {
                 buyer: {
-                    name: 'Sebastian Zuviria',
-                    phone: '123456789',
-                    mail: 'contact@sebaz.io'
+                    name: 'Emiliano Acosta',
+                    phone: '123456',
+                    mail: 'contacto@emiacosta.com'
                 },
                 items: cart,
                 total: total
             }
             
             const batch = writeBatch(db)
-
             const outOfStock = []
-
             const ids = cart.map(prod => prod.id)
-    
             const productsRef = collection(db, 'products')
-    
             const productsAddedFromFirestore = await getDocs(query(productsRef, where(documentId(), 'in', ids)))
-
             const { docs } = productsAddedFromFirestore
-
             docs.forEach(doc => {
                 const dataDoc = doc.data()
                 const stockDb = dataDoc.stock
-
                 const productAddedToCart = cart.find(prod => prod.id === doc.id)
                 const prodQuantity = productAddedToCart?.quantity
 
@@ -57,9 +52,7 @@ const Checkout = () => {
 
             if(outOfStock.length === 0) {
                 await batch.commit()
-
                 const orderRef = collection(db, 'orders')
-
                 const orderAdded = await addDoc(orderRef, objOrder)
 
                 clearCart()
@@ -67,10 +60,15 @@ const Checkout = () => {
                 setTimeout(() => {
                     navigate('/')
                 }, 3000)
-
-                setNotification('success', `El id de su orden es: ${orderAdded.id}`)
+                setNotification(
+                MySwal.fire({
+                    title: <strong>¡Excelente!</strong>,
+                    html: <i>`Tu compra fue realizada con éxito. El ID de su orden es: ${orderAdded.id}`</i>,
+                    icon: 'success',
+                    timer: 2000
+                  }));
             } else {
-               setNotification('error','hay productos que estan fuera de stock')
+               setNotification('error','Hay productos que estan fuera de stock')
             }
 
         } catch (error) {
@@ -82,14 +80,13 @@ const Checkout = () => {
     }
 
     if(loading) {
-        return <h1>Se esta generando su orden...</h1>
+        return <h1 className="generandoOrden">Se está generando su orden...</h1>
     }
 
     return (
         <div>
-            <h1>Checkout</h1>
-            
-            <button onClick={createOrder}>generar orden</button>
+            <h1 className="checkoutTitle">Checkout</h1>
+            <button onClick={createOrder} className="generarOrden">Generar orden</button>
         </div>
     )
 }

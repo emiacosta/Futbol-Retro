@@ -1,0 +1,24 @@
+.generandoOrden{
+    margin-top: 100px;
+    color: #065666;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+}
+
+.generarOrden{
+    margin-top: 50px;
+    font-size: 25px;
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+    border-radius: 8px;
+    background-color: #065666;
+    padding: 10px;
+    color: #fff;
+}
+
+.checkoutTitle{
+    margin: auto;
+    margin-top: 40px;
+    background-color: lightblue;
+    color: #065666;
+}

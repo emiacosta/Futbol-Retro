@@ -38,12 +38,12 @@ const ItemDetail = ({ id, name, img, category, description, price, stock }) => {
             </p>
         </section>
         <footer className='ItemFooter'>
-            {stock !== 0 ? <ItemCount onAdd={handleOnAdd} stock={stock} initial={quantityAdded} /> : <p>No hay stock</p>}
+            {stock !== 0 ? <ItemCount onAdd={handleOnAdd} stock={stock} initial={quantityAdded} /> : <p className='sinStock'>No hay stock</p>}
             {
                 // !isInCart(id) 
                 //? 
                 // : <Link to='/cart' className='Option'>Finalizar compra</Link>
-                isInCart(id) && <Link to='/cart' className='Option' style={{ backgroundColor: 'blue' }}>Finalizar compra</Link>
+                isInCart(id) && <Link to='/cart' className='finalizarCompra'>Finalizar compra</Link>
             }
 
         </footer>
