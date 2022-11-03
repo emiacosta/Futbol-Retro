@@ -12,6 +12,9 @@ const Checkout = () => {
     const [loading, setLoading] = useState(false)
     const { cart, total, clearCart } = useContext(CartContext)
     const { setNotification } = useContext(NotificationContext)
+    const [name, setName] = useState ('');
+    const [tel, setTel] = useState ('');
+    const [email, setEmail] = useState ('');
     const MySwal = withReactContent(Swal)
 
     const navigate = useNavigate()
@@ -21,11 +24,7 @@ const Checkout = () => {
 
         try {
             const objOrden = {
-                buyer: {
-                    name: 'Emiliano Acosta',
-                    phone: '1144523241',
-                    mail: 'emiacosta@email.com'
-                },
+                buyer: { name, tel, email },
                 items: cart,
                 total: total
             }
@@ -83,10 +82,12 @@ const Checkout = () => {
     }
 
     return (
-        <div>
-            <h1 className="checkoutTitle">Checkout</h1>
-            <button onClick={crearOrden} className="generarOrden">Generar orden</button>
-        </div>
+        <form className="formulario">
+            <input value={name} type="text" name="name" placeholder="Ingresá tu nombre completo" required={true} onChange={(e)=> setName  (e.target.value)}/>
+            <input value={email} type="email" name="email" placeholder="Ingresá tu email" required={true} onChange={(e)=> setEmail  (e.target.value)}/>
+            <input value={tel} type="number" name="tel" placeholder="Ingresá tu teléfono" required={true} onChange={(e)=> setTel  (e.target.value)}/>
+            <button type="submit" onClick={crearOrden} className="generarOrden">Generar orden</button>
+        </form>
     )
 }
 

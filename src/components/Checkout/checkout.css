@@ -22,3 +22,20 @@
     background-color: lightblue;
     color: #065666;
 }
+
+.formulario{
+   background-color: lightblue;
+   display: flex;
+   flex-direction: column;
+   padding: 20px;
+   justify-content: center;
+   align-items: center;
+}
+
+.formulario input{
+    margin: 20px;
+    height: 50px;
+    width: 400px;
+    border-radius: 10px;
+    text-align: center;
+}
