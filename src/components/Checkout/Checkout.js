@@ -1,13 +1,12 @@
 import { useState, useContext } from "react"
 import { CartContext } from "../../context/CartContext"
-// import { addDoc, collection } from 'firebase/firestore'
 import { NotificationContext} from '../../notification/NotificationService'
 import { collection, getDocs, query, where, documentId, writeBatch, addDoc } from 'firebase/firestore'
 import { db } from '../../services/firebase/index'
 import { useNavigate } from "react-router-dom"
-import "./checkout.css"
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content'
+import "./checkout.css"
 
 const Checkout = () => {
     const [loading, setLoading] = useState(false)
@@ -17,43 +16,43 @@ const Checkout = () => {
 
     const navigate = useNavigate()
 
-    const createOrder = async () => {
+    const crearOrden = async () => {
         setLoading(true)
 
         try {
-            const objOrder = {
+            const objOrden = {
                 buyer: {
                     name: 'Emiliano Acosta',
-                    phone: '123456',
-                    mail: 'contacto@emiacosta.com'
+                    phone: '1144523241',
+                    mail: 'emiacosta@email.com'
                 },
                 items: cart,
                 total: total
             }
             
             const batch = writeBatch(db)
-            const outOfStock = []
+            const fueraDeStock = []
             const ids = cart.map(prod => prod.id)
-            const productsRef = collection(db, 'products')
-            const productsAddedFromFirestore = await getDocs(query(productsRef, where(documentId(), 'in', ids)))
-            const { docs } = productsAddedFromFirestore
+            const productoRef = collection(db, 'products')
+            const productosAgregadosDeFirestore = await getDocs(query(productoRef, where(documentId(), 'in', ids)))
+            const { docs } = productosAgregadosDeFirestore
             docs.forEach(doc => {
                 const dataDoc = doc.data()
                 const stockDb = dataDoc.stock
-                const productAddedToCart = cart.find(prod => prod.id === doc.id)
-                const prodQuantity = productAddedToCart?.quantity
+                const productoAgregadoAlCarrito = cart.find(prod => prod.id === doc.id)
+                const prodQuantity = productoAgregadoAlCarrito?.quantity
 
                 if(stockDb >= prodQuantity) {
                     batch.update(doc.ref, { stock: stockDb - prodQuantity })
                 } else {
-                    outOfStock.push({ id: doc.id, ...dataDoc})
+                    fueraDeStock.push({ id: doc.id, ...dataDoc})
                 }
             })
 
-            if(outOfStock.length === 0) {
+            if(fueraDeStock.length === 0) {
                 await batch.commit()
-                const orderRef = collection(db, 'orders')
-                const orderAdded = await addDoc(orderRef, objOrder)
+                const ordenRef = collection(db, 'orders')
+                const ordenAñadida = await addDoc(ordenRef, objOrden)
 
                 clearCart()
 
@@ -63,12 +62,12 @@ const Checkout = () => {
                 setNotification(
                 MySwal.fire({
                     title: <strong>¡Excelente!</strong>,
-                    html: <i>`Tu compra fue realizada con éxito. El ID de su orden es: ${orderAdded.id}`</i>,
+                    html: <i>`Tu compra fue realizada con éxito. El ID de su orden es: ${ordenAñadida.id}`</i>,
                     icon: 'success',
                     timer: 2000
                   }));
             } else {
-               setNotification('error','Hay productos que estan fuera de stock')
+               setNotification('error','Hay productos que estan fuera de stock.')
             }
 
         } catch (error) {
@@ -86,7 +85,7 @@ const Checkout = () => {
     return (
         <div>
             <h1 className="checkoutTitle">Checkout</h1>
-            <button onClick={createOrder} className="generarOrden">Generar orden</button>
+            <button onClick={crearOrden} className="generarOrden">Generar orden</button>
         </div>
     )
 }

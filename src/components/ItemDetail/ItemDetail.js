@@ -1,13 +1,12 @@
 import './ItemDetail.css'
 import ItemCount from '../ItemCount/ItemCount'
 import { useContext } from 'react'
-import { Link } from 'react-router-dom'
 import { NotificationContext } from '../../notification/NotificationService'
 import { useCart } from '../../context/CartContext'
 
 const ItemDetail = ({ id, name, img, category, description, price, stock }) => {
 
-    const { addItem, isInCart, getProductQuantity } = useCart()//useContext(CartContext)
+    const { addItem, getProductQuantity } = useCart()
     const { setNotification } = useContext(NotificationContext)
 
     const handleOnAdd = (quantity) => {
@@ -39,13 +38,6 @@ const ItemDetail = ({ id, name, img, category, description, price, stock }) => {
         </section>
         <footer className='ItemFooter'>
             {stock !== 0 ? <ItemCount onAdd={handleOnAdd} stock={stock} initial={quantityAdded} /> : <p className='sinStock'>No hay stock</p>}
-            {
-                // !isInCart(id) 
-                //? 
-                // : <Link to='/cart' className='Option'>Finalizar compra</Link>
-                isInCart(id) && <Link to='/cart' className='finalizarCompra'>Finalizar compra</Link>
-            }
-
         </footer>
     </div>
     )

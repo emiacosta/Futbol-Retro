@@ -1,10 +1,10 @@
-import './ItemDetailContainer.css'
 import { useState, useEffect } from 'react'
 import ItemDetail from '../ItemDetail/ItemDetail'
 import { useParams } from 'react-router-dom'
 import { Spinner } from '@chakra-ui/react'
 import { getDoc, doc } from "firebase/firestore"
 import { db } from "../../services/firebase"
+import './ItemDetailContainer.css'
 
 const ItemDetailContainer = () => {
     const [product, setProduct] = useState()
