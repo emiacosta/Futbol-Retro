@@ -13,9 +13,9 @@ import { NotificationProvider } from './notification/NotificationService';
 function App() {
   return (
     <div className="App">
-      <NotificationProvider>
-        <CartProvider>
-          <ChakraProvider>
+      <ChakraProvider>
+        <NotificationProvider>
+          <CartProvider>
             <BrowserRouter>
               <NavBar />
               <Routes>
@@ -28,9 +28,9 @@ function App() {
                 <Route path='*' element={<h1>404 NOT FOUND</h1>} />
               </Routes>
             </BrowserRouter>
-          </ChakraProvider>
-        </CartProvider>
-      </NotificationProvider>
+          </CartProvider>
+        </NotificationProvider>
+      </ChakraProvider>
     </div>
   );
 
