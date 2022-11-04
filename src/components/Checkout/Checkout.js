@@ -83,9 +83,9 @@ const Checkout = () => {
 
     return (
         <form className="formulario">
-            <input value={name} type="text" name="name" placeholder="Ingresá tu nombre completo" required={true} onChange={(e)=> setName  (e.target.value)}/>
-            <input value={email} type="email" name="email" placeholder="Ingresá tu email" required={true} onChange={(e)=> setEmail  (e.target.value)}/>
-            <input value={tel} type="number" name="tel" placeholder="Ingresá tu teléfono" required={true} onChange={(e)=> setTel  (e.target.value)}/>
+            <input value={name} required type="text" name="name" placeholder="Ingresá tu nombre completo"  onChange={(e)=> setName  (e.target.value)}/>
+            <input value={email} required type="email" name="email" placeholder="Ingresá tu email" onChange={(e)=> setEmail  (e.target.value)}/>
+            <input value={tel} required type="number" name="tel" placeholder="Ingresá tu teléfono" onChange={(e)=> setTel  (e.target.value)}/>
             <button type="submit" onClick={crearOrden} className="generarOrden">Generar orden</button>
         </form>
     )

@@ -1,27 +1,44 @@
+import { useState, useEffect } from 'react'
+import CartWidget from '../CartWidget/CartWidget'
 import { Navbar, Container } from "react-bootstrap";
-import { NavLink } from "react-router-dom";
-import CartWidget from '../CartWidget/CartWidget.js';
-import './NavBar.css';
+import { NavLink } from 'react-router-dom'
+import { getDocs, collection, query, orderBy } from 'firebase/firestore'
+import { db } from '../../services/firebase/index'
+import './NavBar.css'
 
 const NavBar = () => {
+  const [categories, setCategories] = useState([])
+
+  useEffect(() => {
+    const collectionRef = query(collection(db, 'categories'), orderBy('order')) 
+
+    getDocs(collectionRef).then(response => {
+
+      const categoriesAdapted = response.docs.map(doc => {
+        const data = doc.data()
+        const id = doc.id
+
+        return { id, ...data}
+      })
+      setCategories(categoriesAdapted)
+    })
+  }, [])
+
   return (
-    <>
-      <Navbar expand="lg">
+    <Navbar expand="lg">
         <Container>
         <NavLink to='/' className={"logo"}>
           <h1>Fútbol Retro</h1>
       </NavLink>
         <div className="Categories">
-            <NavLink to={'/category/camisetas'} className={({ isActive}) => isActive ? 'ActiveOption' : 'Option'}>Camisetas</NavLink>
-            <NavLink to={'/category/shorts'} className={({ isActive}) => isActive ? 'ActiveOption' : 'Option'}>Shorts</NavLink>
-            <NavLink to={'/category/buzos'} className={({ isActive}) => isActive ? 'ActiveOption' : 'Option'}>Buzos</NavLink>
-            <NavLink to={'/category/botines'} className={({ isActive}) => isActive ? 'ActiveOption' : 'Option'}>Botines</NavLink>
+          {categories.map(cat => (
+              <NavLink key={cat.id} to={`/category/${cat.slug}`} className={({ isActive}) => isActive ? 'ActiveOption' : 'Option'}>{cat.label}</NavLink>
+            ))}
         </div>
         <CartWidget />
         </Container>
       </Navbar>
-    </>
-  );
+  )
 }
 
-export default NavBar;
+export default NavBar
